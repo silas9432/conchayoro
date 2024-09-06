@@ -42,16 +42,16 @@ export class ProductsService {
     const product = await this.findOne(id);
     await product.destroy();
   }
-  async update(id: string, updateProductDto: UpdateProductDto):
-Promise<Product> {
-    const product = await this.findOne(id);
-    const productUpdated = {
-      name: updateProductDto.name,
-      price: updateProductDto.price,
-      category: updateProductDto.category,
-      rating: updateProductDto.rating,
-    };
-    await product.update(productUpdated);
-    return product
+  async update(id: string, updateProductDto: UpdateProductDto,
+    ): Promise<Product> {
+      const product = await this.findOne(id);
+      const productUpdated = {
+        name: updateProductDto.name,
+        price: updateProductDto.price,
+        category: updateProductDto.category,
+        rating: updateProductDto.rating,
+      };
+      await product.update(productUpdated);
+      return product;
   }
 }
