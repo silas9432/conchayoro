@@ -1,4 +1,4 @@
-import { unstable_flag as flag } from './flag/next';
+import { unstable_flag as flag } from '@vercel/flags/next';
 
 export const blackFridayFlag = flag({
     key: 'black-friday',
